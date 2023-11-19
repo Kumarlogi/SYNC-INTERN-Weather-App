@@ -1,5 +1,3 @@
-/* WeatherApp.css */
-
   .weather-app {
     display: flex;
     flex-direction: column;
@@ -11,7 +9,7 @@
     box-shadow: 0 4px 8px #5e00997a;
     background-color: #fefcff;
   }
-  
+
   .title{
     font-weight: 700;
     margin-top: 1.5rem;
@@ -59,4 +57,3 @@
   .error-message {
     color: red;
   }
-  
