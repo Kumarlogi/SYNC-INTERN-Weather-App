@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './WeatherApp.css';
-import { Button, Card, CardBody, CardText, CardTitle, FormControl } from 'react-bootstrap';
+import './App.css';
+import { Card, CardBody, CardText } from 'react-bootstrap';
+import { faCity, faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -32,23 +35,36 @@ const Weather = () => {
 
   return (
     <Card className="weather-app">
-      <CardTitle>Weather App</CardTitle>
+      <h1 className="title">Weather App</h1>
       <CardBody className="search-form">
-        <FormControl
-          type="text"
-          placeholder="Enter city"
-          value={city}
-          className='input-text'
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <FormControl
-          type="text"
-          placeholder="Enter country"
-          value={country}
-          className='input-text'
-          onChange={(e) => setCountry(e.target.value)}
-        />
-        <Button variant="success" onClick={fetchWeatherData}>Get Weather</Button>
+        <span className="icon">
+          <FontAwesomeIcon icon={faHome} className='font-awesome-icon'/>
+          <input
+            type="text"
+            placeholder="Enter city"
+            value={city}
+            className='input-text'
+            onChange={(e) => setCity(e.target.value)}
+            required
+          />
+        </span>
+        <span className="icon">
+          <FontAwesomeIcon icon={faCity} className='font-awesome-icon'/>
+          <input
+            type="text"
+            placeholder="Enter country"
+            value={country}
+            className='input-text'
+            onChange={(e) => setCountry(e.target.value)}
+            required
+          />
+        </span>
+
+        <button 
+            className='btn-get'
+            onClick={fetchWeatherData}
+        >Get Weather</button>
+
       </CardBody>
 
       {weatherData && (

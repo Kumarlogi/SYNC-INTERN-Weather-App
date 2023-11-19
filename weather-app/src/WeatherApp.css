@@ -1,20 +1,61 @@
 /* WeatherApp.css */
 
   .weather-app {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 23rem;
+    margin: 150px 0 0 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #5e00997a;
+    background-color: #fefcff;
   }
   
+  .title{
+    font-weight: 700;
+    margin-top: 1.5rem;
+    font-family: monospace;
+    color: #5e0099;
+  }
+
   .search-form {
     margin-bottom: 20px;
+    border-color: #5e0099;
+  }
+
+  .icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .font-awesome-icon {
+    margin-top: -1rem;
+    margin-right: 0.8rem;
+    color: #7b03c5;
   }
 
   .input-text{
-    padding-left: 1rem;
-    margin: 1rem;
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+    color: #7b03c5;
   }
-  
+
+  .btn-get {
+    background-color: #5e0099;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 20px 5px 20px;
+    margin-top: 1rem;
+    border-style: none;
+  }
+
+  .btn-get:hover {
+    background-color: #5e00997c;
+  }
+
   .error-message {
     color: red;
   }
