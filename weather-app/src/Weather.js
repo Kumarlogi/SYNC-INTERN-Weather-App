@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './WeatherApp.css';
+import { Button, Card, CardBody, CardText, CardTitle, FormControl } from 'react-bootstrap';
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -30,34 +31,36 @@ const Weather = () => {
   };
 
   return (
-    <div className="weather-app">
-      <h1>Weather App</h1>
-      <div className="search-form">
-        <input
+    <Card className="weather-app">
+      <CardTitle>Weather App</CardTitle>
+      <CardBody className="search-form">
+        <FormControl
           type="text"
           placeholder="Enter city"
           value={city}
+          className='input-text'
           onChange={(e) => setCity(e.target.value)}
         />
-        <input
+        <FormControl
           type="text"
           placeholder="Enter country"
           value={country}
+          className='input-text'
           onChange={(e) => setCountry(e.target.value)}
         />
-        <button onClick={fetchWeatherData}>Get Weather</button>
-      </div>
+        <Button variant="success" onClick={fetchWeatherData}>Get Weather</Button>
+      </CardBody>
 
       {weatherData && (
-        <div className="weather-details">
+        <CardText className="weather-details">
           <h2>{weatherData.name}, {weatherData.sys.country}</h2>
           <p>Temperature: {weatherData.main.temp} K</p>
           <p>Description: {weatherData.weather[0].description}</p>
-        </div>
+        </CardText>
       )}
 
       {error && <p className="error-message">{error}</p>}
-    </div>
+    </Card>
   );
 };
 

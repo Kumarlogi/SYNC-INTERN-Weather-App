@@ -1,12 +1,18 @@
 /* WeatherApp.css */
 
-.weather-app {
-    text-align: center;
-    margin-top: 50px;
+  .weather-app {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .search-form {
     margin-bottom: 20px;
+  }
+
+  .input-text{
+    padding-left: 1rem;
+    margin: 1rem;
   }
   
   .error-message {
