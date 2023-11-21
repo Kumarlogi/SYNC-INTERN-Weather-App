@@ -11,7 +11,7 @@ const Weather = () => {
   const [country, setCountry] = useState('');
   const [error, setError] = useState('');
 
-  const API_KEY = '932b52746f2fc6d49837ad450e771c76';
+  const API_KEY = 'YOUR_OPENWEATHER_API_KEY';
 
   const fetchWeatherData = async () => {
     try {
